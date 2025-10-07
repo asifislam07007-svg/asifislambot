@@ -1,10 +1,10 @@
-<!doctype html>
 <?php
-if(file_exists('./bot/.maintenance.txt')){
-    header('location: /maintenance');
-    die;
-}
 session_start();
+
+if (file_exists('./bot/.maintenance.txt')) {
+    header('Location: /maintenance');
+    exit;
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,11 +13,12 @@ session_start();
     <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap">
 
     <script src="https://www.googletagmanager.com/gtag/js?id=G-BCZKLGL3D0" async></script>
-    <script>window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-BCZKLGL3D0');
-	</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BCZKLGL3D0');
+    </script>
 
     <meta charset="UTF-8" />
     <meta
@@ -49,6 +50,7 @@ session_start();
       Telegram.WebApp.setHeaderColor('#2A2D36');
       Telegram.WebApp.setBackgroundColor('#202229');
     </script>
+
     <div
       id="loader"
       style="
@@ -117,6 +119,5 @@ session_start();
     </div>
 
     <div id="root"></div>
-
   </body>
 </html>
