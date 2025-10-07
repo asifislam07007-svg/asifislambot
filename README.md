@@ -1,2 +1,3 @@
 # asifislambot
-Tapswap Clone Script
+Panther Clone Script
+Telegram Bot
