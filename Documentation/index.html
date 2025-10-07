@@ -1,0 +1,243 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>RockyTap - The telegram mini game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/foundation.css">
+        <link rel="stylesheet" href="css/prism.css">
+        <link rel="stylesheet" href="css/main.css">
+
+ 
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+    </head>
+    <body>
+
+        <header id="site-header">
+
+            
+            <div class="row">
+
+              <div class="large-10 large-centered columns">
+
+                  <div class="name">
+                      <h3>Rocky Tap mini game documentation</h3>
+                      <p>Thank you for your order</p>
+                  </div>
+
+                  <ul class="meta">
+                      <li><strong>Author:</strong> <a href="https://codecanyon.net/user/companybro">companybro</a></li>
+                      <li><strong>Live Preview:</strong> <a href="https://t.me/rocky_tap_bot?start=r_5470989195">View Demo</a></li>
+                      <li><strong>Support:</strong> <a href="mailto:ivaylo@borisov.eu">Ask a Question</a></li>
+                  </ul>
+
+              </div>
+
+
+            </div>
+
+        </header>
+
+        <section id="site-body">
+
+            <div id="container" class="row">
+
+                <div id="sidebar" class="large-4 large-push-8 columns" data-magellan-expedition="fixed">
+
+                    <div class="sticky">
+
+                      <h3>Table of Contents</h3>
+                      <ol>
+                          <li data-magellan-arrival="getting-started"><a href="#getting-started">Installation</a></li>
+                          <li data-magellan-arrival="db"><a href="#db">Database and JS files</a></li>
+                          <li data-magellan-arrival="admin"><a href="#admin">Administration</a></li>
+                           
+                      </ol>
+
+                    </div>
+
+                </div>
+
+                <div id="main-content" class="large-8 large-pull-4 columns">
+
+                    <a name="introduction"></a>
+                    <section id="introduction" class="section" data-magellan-destination="introduction">
+                          
+                          <h1>Howdy!</h1>
+                          <p class="lead">You are a shining owner of a regular license based on RockyTap - Tapswap like telegram mini game</p>
+                          <p>First of all, Thank you so much for purchasing this software and for being my loyal customer. You are entitled to get free updates to this product + exceptional support (as per market policy) from the author directly.</p>
+                          <p>This documentation is to help you undesrstand the how to install the software and use it. Please go through the documentation carefully to understand how this software is made and how to edit this properly. Basic PHP, JS and MYsql knowlage is required to customize this software.</p>
+
+                    </section>
+
+                    <a name="getting-started"></a>
+                    <section id="getting-started" class="section" data-magellan-destination="getting-started">
+                          
+                          <h1>1. Getting Started</h1>
+
+                          <br>
+
+                          <p>When you are ready to use the game, you must first upload the game source files to a local or remote server. In this regard,  unzip the "RockyTap" package you have downloaded from codecanyon. In extracted folder you can see following folders:<p>
+
+                          <h3>Package contents</h3>
+
+                          <ul>
+                            <li><strong>RockyTap</strong> — Contains all the original software files comprises of PHP,HTML, CSS, JS etc. This is the folder which you'll upload on your server after necessary modifications.</li>
+
+                            <li><strong>Documentation</strong> — Inside this folder you will find this same documentation updated with the last changes.</li>
+                            
+                          </ul>
+
+
+
+                          <h3>Installation</h3>
+
+                          <ul>
+                            <li><strong>Upload the content of RockyTap folder to your server <img src="img/step1.png"></strong>
+
+                            <li><strong>Create your telegram bot: first you will need <i>telegram account</i> when you are in your telegram account please search for 
+                            "BotFather" - bot in telegram <img src="img/step2.png"><br>
+                            after you complete this step now we can create our telegram bot!
+                            To do this please write in the message section "/newbot" <img src="img/step3.png"><br>
+                            Now give to your bot name for example "MyClicker Game" , after enter your bot name again but like this "my_clicker_game_bot" - this is necccesary to obtain a bot url<br>
+
+                            <img src="img/step4.png">
+
+                              save your bot name : <p color="red"> my_clicker_game_bot</p> and api key example with the code from the image :<p color="red">7231905217:AAHmo8TT19oCXIxtHYIFjmnb038tJtnwmtM</p> <br>
+
+                              now let's create a webhook : 
+                              if you have uploaded the script to your hosting please edit this link 
+
+                              <i>https://api.telegram.org/bot<i style="color:red">your_api_key_here</i>/setwebhook?url=https://<i style="color:red">your_domain_name_here</i>/bot/index.php<br>
+                            the final result need to looks like this <i>https://api.telegram.org/bot7231905217:AAHmo8TT19oCXIxtHYIFjmnb038tJtnwmtM/setwebhook?url=https://borisov.eu/bot/index.php</i>
+                            </i>
+                            </strong>
+                            
+                          </ul>
+
+
+                    </section>
+
+                    <a name="db"></a>
+                    <section id="db" class="section"  data-magellan-destination="db">
+                          
+                          <h1>2. Database and JS files</h1>
+
+                          <br>
+
+
+                          <p>Once we have setup our Telegram bot , webhook and we have uploaded files , we can connect our database and import it.</p>
+
+                          <p>To to this we need to navigate into directory bot/confing.php <br>
+                            Now you will see the following line of codes <br>
+                          <code><br>
+                            <?php<br>
+                            $apiKey = 'your_telegram_api_key';<br>
+                            
+                            $botUsername = 'my_bot_name';<br>
+                            
+                            $web_app = 'https://yoururlhere.com';<br>
+                            
+                            $DB = [<br>
+                            'dbname' => 'your_database',<br>
+                            'username' => 'your_database_user',<br>
+                            'password' => 'Your_database_password'<br>
+                            ];<br>
+                            
+                            $admins_user_id = [<br>
+                            admin_id_one, admin_id_two_if_is_needed_if_no_delete_this<br>
+                            ];<br>
+
+                          </code>
+
+                          fill your information here with your credentials remember you have generated alreadyd a api key from telegram , you have a bot name 
+                          now you need to create a database and fill the neccesary information
+                          your final code need to look like This
+
+
+                          <code><br>
+                            <?php <br>
+                            $apiKey = '7231905217:AAHmo8TT19oCXIxtHYIFjmnb038tJtnwmtM';<br>
+                            
+                            $botUsername = 'my_clicker_game_bot';<br>
+                            
+                            $web_app = 'https://borisov.eu';<br>
+                            
+                            $DB = [<br>
+                            'dbname' => 'mybot',<br>
+                            'username' => 'myuserbot',<br>
+                            'password' => '#data@taokda2%'<br>
+                            ];<br>
+                            
+                            $admins_user_id = [<br>
+                            125125166, <br>
+                            ];
+                          </code><br>
+
+                          Perfect ! <br>
+                          Now please navigate to your URL and open the following url <br>
+                          https://yourdomain.com/database/create_tables.php<br>
+
+                          for example : https://borisov.eu/database/create_tables.php<br>
+                          if you have message "DONE", everything is okay and we can moove to our next step.<br>
+
+                          <img src="img/step5.png"><br>
+
+                          Now please navigate to file "/assets/index-BYqAG32B.js"<br>
+                          Open the file using visual studio code peres CTRL and F and search for "https://yourdomain.com" replace all results with "https:yourdomain.com" <br>
+                          with your acctuall domain name for example "https://borisov.eu" and perform the same action for result "your_bot_name_here" , in our example we will have the my_clicker_game_bot.<br>
+                          <img src="img/step6.png">
+                          </p>
+
+
+                           
+                    </section>
+
+                     
+                    <a name="admin"></a>
+                    <section id="admin" class="section" data-magellan-destination="admin">
+                          
+                          <h1>3. Game Play And Admin</h1>
+
+                          <br>
+
+                          <p>Congrats you have just your first Tap To Earn game up and running<p>
+
+                            <p>Navigate to telegram url of your bot for example : https://t.me/rocky_tap_bot?start=r_5470989195<p>
+
+                            <img src="img/step7.png"><br>
+                            <p>type start and hit the PLAY button</p><br>
+                            <img src="img/step7.png"><br>
+
+                            <h1>4. Admin</h1>
+                            <p>Type on your bot again "/admin" then you will be able to check statistics , add new missions , manage and delete them</p><br>
+                            <img src="img/step9.png"><br>
+
+                            <p>This is everything enjoy on your game , thank you again for your order and stay tuned for updates!</p>
+                          <ul>
+                           
+
+                          </ul>
+
+                    </section>
+
+                    <footer>
+                      <p>©CompanyBro - RockyTap Telegram mini game</p>
+                    </footer>
+
+                </div>
+
+            </div>
+   
+        </section>
+        
+ 
+    </body>
+</html>
